@@ -3,7 +3,7 @@
 Interaktivní onboarding aplikace pro nové zaměstnance IN CATERING Group na pozici Event/Catering Manager.
 
 ## 🚀 Živá verze
-[https://[váš-username].github.io/incatering-onboarding/](https://[váš-username].github.io/incatering-onboarding/)
+[https://lsei27.github.io/incatering-onboarding/](https://lsei27.github.io/incatering-onboarding/)
 
 ## 📋 O aplikaci
 
