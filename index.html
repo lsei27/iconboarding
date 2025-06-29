@@ -1,4 +1,604 @@
-<!DOCTYPE html>
+</style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <img src="data:image/svg+xml,%3Csvg viewBox='0 0 200 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='40' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23E31E24'%3EIN CATERING%3C/text%3E%3C/svg%3E" alt="IN CATERING" class="logo">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="step-indicator" id="stepIndicator">Krok 1 z 10</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Screen 1: Welcome -->
+        <div class="screen active" id="screen1">
+            <div class="welcome-screen">
+                <div class="welcome-decoration"></div>
+                <div class="welcome-decoration"></div>
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Vítej v IN CATERING Group! 🎉</h1>
+                    <p class="welcome-subtitle">Jsme rádi, že se stáváš součástí našeho týmu jako Event/Catering Manager</p>
+                    <button class="btn" onclick="nextScreen()">Začít onboarding</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Company Introduction -->
+        <div class="screen" id="screen2">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🏢</div>
+                        <h2 class="card-title">O společnosti IN CATERING</h2>
+                    </div>
+                    <p>IN CATERING Group byla založena v roce 1995 a dnes patří mezi nejdynamičtěji se rozvíjející cateringové společnosti na českém trhu.</p>
+                    <br>
+                    <p><strong>Naše motto:</strong> Milujeme jídlo – We love food</p>
+                    <p><strong>Naše vize:</strong> Vytvářet zážitky a chutě, na které se nezapomíná</p>
+                    <p><strong>Naše mise:</strong> Přinášíme inspiraci a inovaci v každém soustu</p>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: Company Values -->
+        <div class="screen" id="screen3">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Naše hodnoty</h2>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💼</div>
+                        <h3 class="value-title">Profesionalita</h3>
+                        <p>Špičkový servis a důraz na zákaznickou zkušenost</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <h3 class="value-title">Inovace</h3>
+                        <p>Sledujeme trendy a přicházíme s novinkami</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h3 class="value-title">Lidskost</h3>
+                        <p>Stavíme na rodinné atmosféře a férovosti</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3 class="value-title">Udržitelnost</h3>
+                        <p>Minimalizujeme odpad a myslíme ekologicky</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <h3 class="value-title">Flexibilita</h3>
+                        <p>Reagujeme rychle a plánujeme chytře</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3 class="value-title">Kvalita</h3>
+                        <p>Klademe důraz na kvalitu a vlastní výrobu</p>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: Your Role -->
+        <div class="screen" id="screen4">
+            <div class="container">
+                <div class="role-section">
+                    <h2 class="role-title">Tvoje role: Event/Catering Manager</h2>
+                    <p class="role-description">
+                        Jako Event/Catering Manager budeš zodpovědný za plánování, organizaci a realizaci cateringových akcí. 
+                        Budeš klíčovou osobou v komunikaci s klienty, koordinaci týmu a zajištění perfektního průběhu každé akce.
+                        Tvým úkolem bude vytvářet nezapomenutelné zážitky pro naše klienty a jejich hosty.
+                    </p>
+                </div>
+
+                <div class="card" style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px;">Hlavní zodpovědnosti:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0;">✅ Komunikace s klienty a příprava nabídek</li>
+                        <li style="padding: 10px 0;">✅ Plánování a koordinace cateringových akcí</li>
+                        <li style="padding: 10px 0;">✅ Vedení realizačního týmu</li>
+                        <li style="padding: 10px 0;">✅ Zajištění kvality služeb a spokojenosti klientů</li>
+                        <li style="padding: 10px 0;">✅ Reportování a administrativa</li>
+                    </ul>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 5: Our Operations -->
+        <div class="screen" id="screen5">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Naše provozovny a služby</h2>
+                
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <div class="restaurant-image">🍽️</div>
+                        <div class="restaurant-info">
+                            <h3 class="restaurant-name">IN CATERING</h3>
+                            <p class="restaurant-description">Cateringové služby pro firemní akce, svatby, konference a galavečeře</p>
+                            <a href="#" class="restaurant-link">#myjsmecatering</a>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card">
+                        <div class="restaurant-image">🍕</div>
+                        <div class="restaurant-info">
+                            <h3 class="restaurant-name">Ristorante Fabiano</h3>
+                            <p class="restaurant-description">Italská restaurace s originální pizzou a živou hudbou</p>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card">
+                        <div class="restaurant-image">🍺</div>
+                        <div class="restaurant-info">
+                            <h3 class="restaurant-name">Sou100 Žižkov</h3>
+                            <p class="restaurant-description">Moderní česká kuchyně s důrazem na pivní kulturu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card">
+                        <div class="restaurant-image">🥗</div>
+                        <div class="restaurant-info">
+                            <h3 class="restaurant-name">Tácy na Pankráci</h3>
+                            <p class="restaurant-description">Jídelna s širokou nabídkou obědů a snídaní</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 6: Onboarding Timeline -->
+        <div class="screen" id="screen6">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Tvůj onboarding plán</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Den 1-3</h3>
+                            <h4>Uvítání a základní orientace</h4>
+                            <p>Seznámení s týmem, pracovištěm a základními procesy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Týden 1</h3>
+                            <h4>Školení a dokumentace</h4>
+                            <p>BOZP školení, IT systémy, interní procesy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Týden 2-3</h3>
+                            <h4>Stínování a praxe</h4>
+                            <p>Účast na reálných akcích pod vedením mentora</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Měsíc 1</h3>
+                            <h4>První samostatné projekty</h4>
+                            <p>Postupné přebírání zodpovědnosti za menší akce</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 7: First Day Checklist -->
+        <div class="screen" id="screen7">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Checklist pro první den</h2>
+                
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Přinést všechny potřebné dokumenty (občanský průkaz, zápočtový list, zdravotní průkaz)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Podepsat pracovní smlouvu a související dokumenty</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Převzít pracovní vybavení (notebook, telefon, přístupové karty)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Nastavit emailový účet a přístupy do systémů</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Seznámit se s pracovištěm a týmem</span>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this)"></div>
+                        <span>Domluvit si termín BOZP školení</span>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 8: Key Contacts -->
+        <div class="screen" id="screen8">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Důležité kontakty</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3 class="contact-name">HR oddělení</h3>
+                        <p class="contact-info">📧 hr@incatering.cz</p>
+                        <p class="contact-info">📱 +420 XXX XXX XXX</p>
+                        <p>První kontakt pro administrativní záležitosti</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3 class="contact-name">Tvůj mentor</h3>
+                        <p class="contact-info">Bude ti přidělen první den</p>
+                        <p>Pomůže ti se zorientovat a zodpoví všechny otázky</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3 class="contact-name">IT podpora</h3>
+                        <p class="contact-info">📧 it@incatering.cz</p>
+                        <p>Pro technické problémy a nastavení systémů</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3 class="contact-name">Vedoucí realizace</h3>
+                        <p class="contact-info">Tvůj přímý nadřízený</p>
+                        <p>Zadává úkoly a schvaluje dovolenou</p>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 9: Benefits -->
+        <div class="screen" id="screen9">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Zaměstnanecké benefity</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🏃‍♂️</div>
+                        <h3 class="benefit-title">Multisport karta</h3>
+                        <p class="benefit-description">Přístup do sportovních center po celé ČR</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h3 class="benefit-title">Příspěvek na penzijní připojištění</h3>
+                        <p class="benefit-description">400 Kč měsíčně od zaměstnavatele</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🍽️</div>
+                        <h3 class="benefit-title">Sleva 30%</h3>
+                        <p class="benefit-description">Ve všech našich provozovnách</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎂</div>
+                        <h3 class="benefit-title">Dárek k narozeninám</h3>
+                        <p class="benefit-description">Voucher 500 Kč a lahev sektu</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚐</div>
+                        <h3 class="benefit-title">Půjčování dodávek</h3>
+                        <p class="benefit-description">Pro osobní účely za 10 Kč/km</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎉</div>
+                        <h3 class="benefit-title">Teambuildingy</h3>
+                        <p class="benefit-description">Pravidelné firemní akce a setkání</p>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="nextScreen()">Pokračovat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 10: Important Documents -->
+        <div class="screen" id="screen10">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Důležité dokumenty a materiály</h2>
+                
+                <div class="documents-grid">
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">📋</div>
+                        <h3 class="document-title">Pracovní řád</h3>
+                        <p class="document-description">Základní pravidla a standardy společnosti</p>
+                    </div>
+                    
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">📘</div>
+                        <h3 class="document-title">Employee Handbook</h3>
+                        <p class="document-description">Kompletní průvodce pro zaměstnance</p>
+                    </div>
+                    
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">🔐</div>
+                        <h3 class="document-title">IT Security Guidelines</h3>
+                        <p class="document-description">Pravidla pro bezpečnou práci s IT</p>
+                    </div>
+                    
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">📊</div>
+                        <h3 class="document-title">Cateringový manuál</h3>
+                        <p class="document-description">Postupy a standardy pro catering</p>
+                    </div>
+                    
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">🎯</div>
+                        <h3 class="document-title">Etický kodex</h3>
+                        <p class="document-description">Hodnoty a principy naší společnosti</p>
+                    </div>
+                    
+                    <div class="document-card" onclick="alert('Dokument bude k dispozici na SharePointu')">
+                        <div class="document-icon">💼</div>
+                        <h3 class="document-title">Benefity a výhody</h3>
+                        <p class="document-description">Detailní přehled všech benefitů</p>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Zpět</button>
+                    <button class="btn" onclick="completeOnboarding()">Dokončit onboarding</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 11: Completion -->
+        <div class="screen" id="screen11">
+            <div class="completion-screen">
+                <div class="welcome-decoration"></div>
+                <div class="welcome-decoration"></div>
+                <div class="completion-content">
+                    <div class="completion-icon">🎉</div>
+                    <h1 class="completion-title">Gratulujeme!</h1>
+                    <p class="completion-message">
+                        Dokončil/a jsi základní onboarding. Těšíme se na spolupráci a věříme, 
+                        že se ti u nás bude líbit. Nezapomeň, že tvůj mentor a celý tým 
+                        je tu pro tebe, kdykoliv budeš potřebovat pomoc.
+                    </p>
+                    <p class="completion-message" style="margin-top: 20px;">
+                        <strong>Vytváříme zážitky a chutě, na které se nezapomíná!</strong>
+                    </p>
+                    <button class="btn" style="margin-top: 30px;" onclick="restartOnboarding()">Projít znovu</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // State management
+        let currentScreen = 1;
+        const totalScreens = 11;
+        let checklistProgress = 0;
+
+        // Initialize
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navigation functions
+        function showScreen(screenNumber) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show current screen
+            document.getElementById(`screen${screenNumber}`).classList.add('active');
+            
+            // Update progress
+            updateProgress();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function nextScreen() {
+            if (currentScreen < totalScreens) {
+                currentScreen++;
+                showScreen(currentScreen);
+            }
+        }
+
+        function prevScreen() {
+            if (currentScreen > 1) {
+                currentScreen--;
+                showScreen(currentScreen);
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentScreen - 1) / (totalScreens - 1)) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('stepIndicator').textContent = `Krok ${currentScreen} z ${totalScreens}`;
+        }
+
+        // Checklist functionality
+        function toggleCheck(checkbox) {
+            checkbox.classList.toggle('checked');
+            const parent = checkbox.parentElement;
+            parent.classList.toggle('completed');
+            
+            // Update checklist progress
+            const totalItems = document.querySelectorAll('.checkbox').length;
+            const checkedItems = document.querySelectorAll('.checkbox.checked').length;
+            checklistProgress = (checkedItems / totalItems) * 100;
+        }
+
+        // Complete onboarding
+        function completeOnboarding() {
+            currentScreen = 11;
+            showScreen(currentScreen);
+            
+            // Save completion status (in real app, this would be sent to server)
+            localStorage.setItem('onboardingCompleted', 'true');
+            localStorage.setItem('completionDate', new Date().toISOString());
+        }
+
+        // Restart onboarding
+        function restartOnboarding() {
+            currentScreen = 1;
+            showScreen(currentScreen);
+            
+            // Reset checklist
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.classList.remove('checked');
+                checkbox.parentElement.classList.remove('completed');
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentScreen < totalScreens) {
+                nextScreen();
+            } else if (e.key === 'ArrowLeft' && currentScreen > 1) {
+                prevScreen();
+            }
+        });
+
+        // Touch gestures for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentScreen < totalScreens) {
+                    // Swipe left - next screen
+                    nextScreen();
+                } else if (diff < 0 && currentScreen > 1) {
+                    // Swipe right - previous screen
+                    prevScreen();
+                }
+            }
+        }
+
+        // Save progress
+        function saveProgress() {
+            localStorage.setItem('onboardingProgress', JSON.stringify({
+                currentScreen: currentScreen,
+                checklistItems: Array.from(document.querySelectorAll('.checkbox')).map(cb => cb.classList.contains('checked')),
+                timestamp: new Date().toISOString()
+            }));
+        }
+
+        // Load progress
+        function loadProgress() {
+            const saved = localStorage.getItem('onboardingProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                currentScreen = progress.currentScreen || 1;
+                showScreen(currentScreen);
+                
+                // Restore checklist if on that screen
+                if (currentScreen === 7 && progress.checklistItems) {
+                    const checkboxes = document.querySelectorAll('.checkbox');
+                    progress.checklistItems.forEach((checked, index) => {
+                        if (checked && checkboxes[index]) {
+                            checkboxes[index].classList.add('checked');
+                            checkboxes[index].parentElement.classList.add('completed');
+                        }
+                    });
+                }
+            }
+        }
+
+        // Auto-save progress when changing screens
+        window.addEventListener('beforeunload', saveProgress);
+
+        // Load progress on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startScreen = urlParams.get('screen');
+            
+            if (startScreen) {
+                currentScreen = parseInt(startScreen) || 1;
+                showScreen(currentScreen);
+            } else {
+                loadProgress();
+            }
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
@@ -637,52 +1237,3 @@
         .restaurant-link {
             color: var(--primary-red);
             text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader">
-      <div class="loader-bar"></div>
-      <div class="loader-bar"></div>
-      <div class="loader-bar"></div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-      <img src="https://via.placeholder.com/120x40?text=LOGO" alt="IN CATERING logo" class="logo">
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="step-indicator" id="stepIndicator">Krok 1 / 1</div>
-    </div>
-  </header>
-
-  <!-- Main content -->
-  <main class="main container">
-    <section class="screen welcome-screen active" id="screen-welcome">
-      <span class="welcome-decoration"></span>
-      <span class="welcome-decoration"></span>
-      <div class="welcome-content">
-        <h1 class="welcome-title">Vítej v IN CATERING</h1>
-        <p class="welcome-subtitle">Tento onboarding ti pomůže rychle se zorientovat.</p>
-        <button class="btn" id="btn-next">Pokračovat</button>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    /* Skryj loader po načtení */
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loadingScreen');
-      loader.classList.add('hidden');
-    });
-
-    /* Jednoduché pokračování – nahraď vlastní logikou */
-    document.getElementById('btn-next').addEventListener('click', () => {
-      alert('Pokračování na další krok – tady implementuj vlastní funkci.');
-    });
-  </script>
-</body>
-</html>
