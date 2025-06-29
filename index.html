@@ -637,3 +637,52 @@
         .restaurant-link {
             color: var(--primary-red);
             text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader">
+      <div class="loader-bar"></div>
+      <div class="loader-bar"></div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <img src="https://via.placeholder.com/120x40?text=LOGO" alt="IN CATERING logo" class="logo">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="step-indicator" id="stepIndicator">Krok 1 / 1</div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main container">
+    <section class="screen welcome-screen active" id="screen-welcome">
+      <span class="welcome-decoration"></span>
+      <span class="welcome-decoration"></span>
+      <div class="welcome-content">
+        <h1 class="welcome-title">Vítej v IN CATERING</h1>
+        <p class="welcome-subtitle">Tento onboarding ti pomůže rychle se zorientovat.</p>
+        <button class="btn" id="btn-next">Pokračovat</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /* Skryj loader po načtení */
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loadingScreen');
+      loader.classList.add('hidden');
+    });
+
+    /* Jednoduché pokračování – nahraď vlastní logikou */
+    document.getElementById('btn-next').addEventListener('click', () => {
+      alert('Pokračování na další krok – tady implementuj vlastní funkci.');
+    });
+  </script>
+</body>
+</html>
